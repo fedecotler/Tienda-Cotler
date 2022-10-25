@@ -76,3 +76,10 @@ const total = carrito.reduce((acc, el) => acc + el.precio * el.unidades, 0)
 console.log(`el total a pagar de su compra es: ${total}`)
 
 
+// DOM
+
+const rangoCalidad = document.querySelector(".rangoCalidad");
+
+rangoCalidad.setAttribute("type", "range")
+
+// DOM
