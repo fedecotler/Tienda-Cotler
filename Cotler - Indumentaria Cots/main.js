@@ -1,85 +1,52 @@
-const productos = [
-    { nombre: "harina", precio: 50 },
-    { nombre: "galletitas", precio: 100 },
-    { nombre: "cerveza", precio: 100 },
-    { nombre: "leche", precio: 200 },
-    { nombre: "gaseosa", precio: 250 },
-];
-let carrito = []
+let boton = document.getElementById("boton")
+boton.addEventListener("click", calculoCarrito)
+boton.addEventListener("click", evitarDobleClick)
 
-let seleccion = prompt("Hola, desea comprar algún producto. Si o no?")
 
-while (seleccion != "si" && seleccion != "no") {
-    alert("por favor ingrese si o no")
-    seleccion = prompt("Hola, desea comprar algo si o no?")
+// función que evita doble click
+function evitarDobleClick() {
+    document.getElementById("boton").disabled = true;
+    setTimeout(function() {
+        document.getElementById("boton").disabled = false;
+    }, 50);
 }
 
+function calculoCarrito() {
+document.getElementById("resultado").innerHTML = ""
 
-if (seleccion == "si") {
-    alert("a continuación nuestra lista de prodcutos")
-    let todoslosProductos = productos.map(
-        (producto) => producto.nombre + " " + producto.precio + "$"
-    );
-    alert(todoslosProductos.join(" _ "))
-} else if (seleccion == "no") {
-    alert("gracias por venir, hasta pronto!")
-}
-
-
-while(seleccion != "no"){
-    let producto = prompt("agrega un producto a tu carrito")
-    let precio = 0
+a = document.getElementById("producto1")
+let a1 = a.value
+b = document.getElementById("producto2")
+let b2 = b.value
+c = document.getElementById("producto3")
+let c3 = c.value
+d = document.getElementById("producto4")
+let d4 = d.value
+e = document.getElementById("producto5")
+let e5 = e.value
 
 
-    if (producto == "harina" || producto == "galletitas" || producto == "cerveza" || producto == "leche" || producto == "gaseosa") {
-        switch (producto) {
-            case
-                "harina":
-                precio = 50;
-                break;
-            case "galleitas":
-                precio = 100;
-                break;
-            case "cerveza":
-                precio = 100;
-                break;
-            case "leche":
-                precio = 200;
-                break;
-            case "gaseosa":
-                precio = 250;
-                break;
-            default:
-                break;
-        }
-        let unidades = parseInt(prompt("cuantas unidades quiere llevar?"))
-
-        carrito.push({producto, unidades, precio})
-        console.log(carrito)
-    } else {
-        alert("no tenemos ese producto")
+class Ropa {
+    constructor(nombre, precio) {
+        this.name = nombre
+        this.price = precio
     }
 
-    seleccion = prompt("desea seguir comprando?")
-
-    while (seleccion === "no"){
-        alert("gracias por la compra! hasta pronto")
-        carrito.forEach((carritoFinal) => {
-            console.log(`producto: ${carritoFinal.producto}, unidades: ${carrito.unidades},
-            total a pagar por producto ${carritoFinal.unidades * carritoFinal.precio}`)
-        })
-        break;
-    }
 }
 
-const total = carrito.reduce((acc, el) => acc + el.precio * el.unidades, 0)
-console.log(`el total a pagar de su compra es: ${total}`)
+const Remera = new Ropa("Remera", 3500)
+const Buzo = new Ropa("Buzo", 7000)
+const Campera = new Ropa("Campera", 12300)
+const Jean = new Ropa("Jean", 6000)
+const Zapatillas = new Ropa("Zapatillas", 14000)
+
+let listaRopa = [Remera, Buzo, Campera, Jean, Zapatillas]
 
 
-// DOM
+let x = a1*listaRopa[0].price + b2*listaRopa[1].price + c3*listaRopa[2].price + d4*listaRopa[3].price + e5*listaRopa[4].price;
 
-const rangoCalidad = document.querySelector(".rangoCalidad");
+document.getElementById("resultado").innerHTML = `<br><b>Tu total es $${x}</b> <br>`
+}
 
-rangoCalidad.setAttribute("type", "range")
 
-// DOM
+

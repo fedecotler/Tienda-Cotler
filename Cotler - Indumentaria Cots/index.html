@@ -6,47 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- Link CSS -->
     <link rel="stylesheet" href="style.css">
-  
+
 </head>
 
 <body>
-
-
-    <!-- Comienza Header -->
-    <header>
-        <div>
-            <input class="rangoCalidad">
-            <label>Por favor, arrastra el punto indicando el rango de Calidad de nuestros productos.</label> 
+    <h2>Carrito de Compras</h2>
+    <div>
+        <p>Elegir los productos que desee agregar al carrito y la cantidad</p>
+        <form action="">
+            <div><input type="number" id="producto1" placeholder="Remera"></div>
+            <br>
+            <div><input type="number" id="producto2" placeholder="Buzo"></div>
+            <br>
+            <div><input type="number" id="producto3" placeholder="Campera"></div>
+            <br>
+            <div><input type="number" id="producto4" placeholder="Jean"></div>
+            <br>
+            <div><input type="number" id="producto5" placeholder="Zapatillas"></div>
+            <br>
+            <button id="boton">Agregar al Carrito</button>
+        </form>
+        <div class="texto">
+            <p id="resultado"></p>
         </div>
-            <div>
-                <!-- Carrito -->
-                <aside>
-                    <h2>Carrito</h2>
-                    <p>Total: <span></span>&euro;</p>
-                    <button>Vaciar</button>
-                </aside>
-            </div>
-    </header>
-    <!-- Termina Header -->
+    </div>
 
 
-    <!-- Comienza Main -->
-    <main></main>
-    <!-- Termina Main -->
-
-
-    <!-- Comienza Footer -->
-    <footer></footer>
-    <!-- Termina Footer -->
-
-
-
-
-    <!-- Link JS -->
     <script src="main.js"></script>
-    <!-- Link JS -->
 </body>
 
 </html>
